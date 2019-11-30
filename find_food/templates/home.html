@@ -94,8 +94,11 @@ h1{
         <ul class="down">
             <a onclick="showHide('info_menu1')" onfocus="this.blur()" href="javascript:void(0)">지역</a>
             <div id="info_menu1" style="display:none">
+                <!-- location form -->
+                <form action="" method="POST" >
+                    {% csrf_token %}
                 {% for item in location %}
-                <li><a href="" class="sub_menu">{{item.name}}</a></li>
+                <li><input type='checkbox' name='location' value='{{item.name}}' /><a href="" class="sub_menu">{{item.name}}</a></li>
                 {% endfor %}
             </div>
         </ul>
@@ -103,6 +106,9 @@ h1{
                 <a onclick="showHide('info_menu2')" onfocus="this.blur()" href="javascript:void(0)">종류</a>
                 <div id="info_menu2" style="display:none">
                     <li><a class="sub_menu">붕어빵</a></li>
+                    <input type="submit">
+                    </form>
+
                 </div>
             </ul>
     </div>
