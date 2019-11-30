@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from find_food.views import home
+# from find_food.views import home
 from django.conf import settings
 from django.conf.urls.static import static
+from find_food import urls as findfood_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',home, name='home'),
-    # path('find_food/',include('find_food.urls')),
+    # path('',home, name='home'),
+    path('', include(findfood_urls)),
+    path('accounts/', include('allauth.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
