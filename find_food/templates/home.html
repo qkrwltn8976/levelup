@@ -1,14 +1,132 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
 
-<<<<<<< HEAD
-붕어빵 알려주는 것입니다
-=======
-{{vendor.all}}
-{{location.all}}
->>>>>>> dfa24dc94fe6da6ea9b1be8036810c87bb58e87d
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav ul {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+.center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:400px;
+    height:400px;
+    position: absolute;
+    top: 8px;
+    left:280px;
+}
+.pojang{
+    /* height: 100%; */
+    width:100%;
+    opacity: 0.7;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.down{
+    margin-left:30px;
+}
+h1{
+    margin:0px;
+}
+.sub_menu { 
+    font-size: 18px !important; 
+    padding-left:0px !important; 
+}
+</style>
+</head>
+<body>
+    <img class="pojang" src="{% static 'img/pojang1.png' %}">
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <ul class="down">
+            <a onclick="showHide('info_menu1')" onfocus="this.blur()" href="javascript:void(0)">지역</a>
+            <div id="info_menu1" style="display:none">
+                {% for item in location %}
+                <li><a href="" class="sub_menu">{{item.name}}</a></li>
+                {% endfor %}
+            </div>
+        </ul>
+        <ul class="down">
+                <a onclick="showHide('info_menu2')" onfocus="this.blur()" href="javascript:void(0)">종류</a>
+                <div id="info_menu2" style="display:none">
+                    <li><a class="sub_menu">붕어빵</a></li>
+                </div>
+            </ul>
+    </div>
+
+   <img class="center" src="{% static 'img/123.png' %}"  onclick="openNav()">
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <script>
+    function showHide(id) {
+        var obj = document.getElementById(id);
+        if (obj.style.display == 'none')
+            obj.style.display = 'block';
+        else
+            obj.style.display = 'none';
+    }
+    </script>
+</body>
+</html>
 {% endblock %}

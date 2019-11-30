@@ -9,4 +9,5 @@ app_name = 'find_food'
 urlpatterns = [
 	path('', views.home, name="home"),
 	path('map', views.map, name="map"),
+    path('select_loc/<int:loc_id>', views.select_loc, name="select_loc"),
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

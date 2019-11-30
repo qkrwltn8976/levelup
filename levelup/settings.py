@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'allauth', # new
+    'allauth.account', # new
     'find_food',
 ]
 
@@ -123,8 +126,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
 	os.path.join(BASE_DIR, 'levelup', 'static')
 ]
-STATIC_ROOT = os.path.join(BASE_DIR, 'levelup/static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'levelup/static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+SITE_ID = 1
