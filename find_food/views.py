@@ -11,8 +11,8 @@ def home(request):
     return render(request, 'home.html',{'location':location})
 
 def map(request):
-
-    return render(request, 'map.html')
+    location = Location.objects.all()
+    return render(request, 'map.html', {'location':location})
 
 @api_view(['POST'])
 def select_loc(request, loc_id):
