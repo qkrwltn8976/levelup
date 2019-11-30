@@ -1,8 +1,10 @@
 from django.shortcuts import render
-
+from .models import Vendor, Location
 # Create your views here.
 def home(request):
-    return render(request, 'home.html',{})
+    vendor = Vendor.objects
+    location = Location.objects
+    return render(request, 'home.html',{'vendor':vendor, 'location':location})
 
 def map(request):
     return render(request, 'map.html')
