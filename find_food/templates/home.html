@@ -10,7 +10,13 @@
 body {
   font-family: "Lato", sans-serif;
 }
-
+@font-face { 
+    font-family: 'TDTDTadakTadak';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/TDTDTadakTadak.woff') 
+    format('woff'); 
+    font-weight: normal;
+    font-style: normal; 
+}
 .sidenav {
   height: 100%;
   width: 0;
@@ -85,6 +91,14 @@ h1{
     font-size: 18px !important; 
     padding-left:0px !important; 
 }
+.explain{
+    position: absolute;
+    left:650px;
+    top:100px;
+    font-family: 'TDTDTadakTadak';
+    font-size:50px;
+    color:white;
+}
 </style>
 </head>
 <body>
@@ -112,8 +126,39 @@ h1{
                 </div>
             </ul>
     </div>
+   <img class="center" src="{% static 'img/123.png' %}" id="close" onClick="reply_click(this)">
+    <script language="javascript">
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
 
-   <img class="center" src="{% static 'img/123.png' %}"  onclick="openNav()">
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+    <p class="explain">붕어야 어딨니?</p>
+    <script language="javascript">
+    function showHide(id) {
+        var obj = document.getElementById(id);
+        if (obj.style.display == 'none')
+            obj.style.display = 'block';
+        else
+            obj.style.display = 'none';
+    }
+    function reply_click(obj)
+    {
+        var id = obj.id;
+        if(id == 'close') {
+            openNav();
+            obj.id = 'open';
+        }
+        else {
+            closeNav();
+            obj.id = 'close';
+        }
+        console.log(id);
+    }
+    </script>
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
