@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      .bg { background-image: url( "배경.jpg" ); background-size: cover; height: 657px;}
+      .op-white { background-color: rgba(255, 255, 255, 0.6); height: 657px;}
+      body {
+            font-family: "Lato", sans-serif;
+            margin: 0px;
+            }
+
+      .sidenav {
+                height: 100%;
+                width: 200px;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                padding-top: 20px;
+                }
+
+      .sidenav a.sidenav-link {
+                                padding: 6px 6px 6px 32px;
+                                text-decoration: none;
+                                font-size: 25px;
+                                color: #818181;
+                                display: block;
+                                }
+
+      .sidenav a.sidenav-link:hover {
+                                      color: #f1f1f1;
+                                    }
+
+      .down{
+            margin-left:30px;
+            }
+
+      .sub_menu{
+                color:white !important;
+                text-align: center;
+                list-style: none;
+                margin:0px; padding:0px;
+                }
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a.sidenav-link {font-size: 18px;}
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+    <div class="op-white"></div>
+    </div>
+    <div class="sidenav">
+    <ul class="down">
+              <a onclick="showHide('info_menu1')" onfocus="this.blur()" href="javascript:void(0)" class="sidenav-link">지역</a>
+              <div id="info_menu1" style="display:none">
+                  <li class="sub_menu"><a class="sub_menu">홍대</a></li>
+                  <li class="sub_menu"><a class="sub_menu">강남</a></li>
+                  <li class="sub_menu"><a class="sub_menu">신촌</a></li>
+              </div>
+          </ul>
+          <ul class="down">
+                    <a onclick="showHide('info_menu2')" onfocus="this.blur()" href="javascript:void(0)" class="sidenav-link">종류</a>
+                    <div id="info_menu2" style="display:none">
+                        <li class="sub_menu"><a class="sub_menu">붕어빵</a></li>
+                    </div>
+                </ul>
+          <script>
+           function showHide(id) {
+               var obj = document.getElementById(id);
+               if (obj.style.display == 'none')
+                   obj.style.display = 'block';
+               else
+                   obj.style.display = 'none';
+           }
+           </script>
+      </div>
+
+
+  </body>
+</html>
