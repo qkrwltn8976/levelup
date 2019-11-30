@@ -25,7 +25,7 @@ SECRET_KEY = 'scgr^02z2rggl2z2unx@e2j3bjmkp(t6m1zm7q7a+pfc2-en(y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".goorm.io"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
