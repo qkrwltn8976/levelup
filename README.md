@@ -3,6 +3,7 @@
 선택한 지역의 붕어빵 노점상의 정보(위치, 오픈시간, 마감시간, 가격)을 알려주는 서비스입니다
 
 ![](levelup.png)
+![](levelup2.png)
 
 ## Link
 - https://www.notion.so/446a3a5156b54900b12fe472da0a430e
